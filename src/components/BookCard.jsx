@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import "./BookCard.css"; // Ensure styles are applied
+import "./BookCard.css";
+
 
 const BookCard = ({ book }) => {
   const coverId = book.cover_i;

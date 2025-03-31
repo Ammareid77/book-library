@@ -10,7 +10,11 @@
   
   .book-card:hover {
     transform: scale(1.05);
-  }
+    -webkit-transform:;
+    -moz-transform:;
+    -ms-transform:;
+    -o-transform:;
+}
   
   .book-cover {
     width: 100%;
@@ -43,4 +47,22 @@
   .book-link:hover {
     background-color: #0056b3;
   }
+  
+  .view-details {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-details:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
   
