@@ -1,23 +1,20 @@
-// src/components/BookCard.jsx
-import { useContext } from "react";
-import { FavoritesContext } from "../context/FavoritesContext";
 import { Link } from "react-router-dom";
+import "./BookCard.css"; // Ensure styles are applied
 
 const BookCard = ({ book }) => {
-  const { favorites, toggleFavorite } = useContext(FavoritesContext);
-  const isFavorite = favorites.some((fav) => fav.key === book.key);
+  const coverId = book.cover_i;
+  const coverURL = coverId
+    ? `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`
+    : "https://via.placeholder.com/150?text=No+Cover"; // Default image
 
   return (
     <div className="book-card">
-      <h3>{book.title}</h3>
-      <p>by {book.author_name?.join(", ") || "Unknown"}</p>
-      <Link to={`/book/${book.key.replace("/works/", "")}`}>View Details</Link>
-      <button
-        className={`favorite-btn ${isFavorite ? "active" : ""}`}
-        onClick={() => toggleFavorite(book)}
-      >
-        {isFavorite ? "★ Remove from Favorites" : "☆ Add to Favorites"}
-      </button>
+      <img src={coverURL} alt={book.title} className="book-cover" />
+      <h3 className="book-title">{book.title}</h3>
+      <p className="book-author">{book.author_name?.join(", ") || "Unknown"}</p>
+      <Link to={`/book/${book.key.replace("/works/", "")}`} className="book-link">
+        View Details
+      </Link>
     </div>
   );
 };
