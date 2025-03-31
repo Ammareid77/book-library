@@ -1,40 +1,42 @@
-// src/context/FavoritesContext.jsx
 import { createContext, useState, useEffect } from "react";
 
+// Create the context
 export const FavoritesContext = createContext();
 
 const FavoritesProvider = ({ children }) => {
-  const [favorites, setFavorites] = useState([]);
+  // Load favorites from localStorage on initial render
+  const [favorites, setFavorites] = useState(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  });
 
-  // Load favorites from localStorage when the app starts
-  useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    setFavorites(storedFavorites);
-  }, []);
-
-  // Save favorites to localStorage whenever they change
+  // Save favorites to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
-  // Function to add/remove books from favorites
-  const toggleFavorite = (book) => {
-    setFavorites((prevFavorites) => {
-      const isFavorite = prevFavorites.some((fav) => fav.key === book.key);
-      if (isFavorite) {
-        return prevFavorites.filter((fav) => fav.key !== book.key);
-      } else {
-        return [...prevFavorites, book];
-      }
-    });
+  // Function to check if a book is already in favorites
+  const isFavorite = (book) => {
+    return favorites.some((fav) => fav.key === book.key);
+  };
+
+  // Function to add a book to favorites
+  const addToFavorites = (book) => {
+    if (!isFavorite(book)) {
+      setFavorites([...favorites, book]);
+    }
+  };
+
+  // Function to remove a book from favorites
+  const removeFromFavorites = (bookKey) => {
+    setFavorites(favorites.filter((fav) => fav.key !== bookKey));
   };
 
   return (
-    <FavoritesContext.Provider value={{ favorites, toggleFavorite }}>
+    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites, isFavorite }}>
       {children}
     </FavoritesContext.Provider>
   );
 };
 
 export default FavoritesProvider;
-
