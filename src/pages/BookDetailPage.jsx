@@ -1,9 +1,8 @@
 // src/pages/BookDetailPage.jsx
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useParams, useEffect, useState } from "react";
 
 const BookDetailPage = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Get the id from URL
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
