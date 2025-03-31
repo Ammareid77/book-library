@@ -1,13 +1,11 @@
-// src/components/BookCard.jsx
 import { Link } from "react-router-dom";
 
 const BookCard = ({ book }) => {
   return (
-    <div className="book-card">
-      <h3>{book.title}</h3>
-      <p>{book.author_name || 'Unknown Author'}</p>
-      {/* Ensure book.key exists and handle missing values */}
-      <Link to={book.key ? `/book/${book.key.replace("/works/", "")}` : "#"} className="details-button">
+    <div className="border p-4 rounded-lg shadow-md">
+      <h3 className="text-lg font-semibold">{book.title}</h3>
+      <p className="text-gray-600">by {book.author_name?.join(", ") || "Unknown"}</p>
+      <Link to={`/book/${book.key.replace("/works/", "")}`} className="text-blue-500 mt-2 block">
         View Details
       </Link>
     </div>
@@ -15,3 +13,4 @@ const BookCard = ({ book }) => {
 };
 
 export default BookCard;
+

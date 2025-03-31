@@ -10,6 +10,12 @@ const Home = () => {
 
   // Function to fetch books from the Open Library API
   const searchBooks = async (query) => {
+    if (!query.trim()) {
+      setError("Find your book now"); // Display message if query is empty
+      setBooks([]); // Clear book list
+      return;
+    }
+
     setLoading(true);
     setError(null); // Reset errors when starting a new search
 
@@ -20,7 +26,7 @@ const Home = () => {
       if (!response.ok) throw new Error("Failed to fetch books. Try again!");
 
       const data = await response.json();
-      if (data.docs.length === 0) throw new Error("No books found.");
+      if (data.docs.length === 0) throw new Error("No books found!");
 
       // Update state with search results (limit to 20 books)
       setBooks(data.docs.slice(0, 20));
@@ -34,14 +40,14 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="title">📚 Book Library</h1>
+      <h1 className="title">Book Library</h1>
       <SearchBar onSearch={searchBooks} />
-
-      {/* Display loading spinner */}
-      {loading && <div className="loading-spinner"></div>}
 
       {/* Display error message */}
       {error && <p className="error">{error}</p>}
+
+      {/* Display loading spinner */}
+      {loading && <div className="loading-spinner"></div>}
 
       {/* Display books if available */}
       {!loading && !error && <BookList books={books} />}
@@ -50,4 +56,3 @@ const Home = () => {
 };
 
 export default Home;
-
