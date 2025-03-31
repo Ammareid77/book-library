@@ -13,9 +13,10 @@ const BookCard = ({ book }) => {
       <img src={coverURL} alt={book.title} className="book-cover" />
       <h3 className="book-title">{book.title}</h3>
       <p className="book-author">{book.author_name?.join(", ") || "Unknown"}</p>
-      <Link to={`/book/${book.key.replace("/works/", "")}`} className="book-link">
-        View Details
-      </Link>
+      <Link to={`/book/${book.key.replace("/works/", "")}`} className="view-details">
+  View Details
+</Link>
+
     </div>
   );
 };
