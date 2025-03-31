@@ -10,11 +10,14 @@ const BookDetailPage = () => {
 
   useEffect(() => {
     const fetchBookDetails = async () => {
+      setLoading(true);
+      setError(null);
+
       try {
         const response = await fetch(`https://openlibrary.org/works/${id}.json`);
-        if (!response.ok) throw new Error("Failed to fetch book details");
+        if (!response.ok) throw new Error("Failed to fetch book details.");
+        
         const data = await response.json();
-
         setBook(data);
       } catch (err) {
         setError(err.message);
@@ -26,8 +29,8 @@ const BookDetailPage = () => {
     fetchBookDetails();
   }, [id]);
 
-  if (loading) return <p className="error">Loading book details...</p>;
-  if (error) return <p className="error">Error: {error}</p>;
+  if (loading) return <div className="loading-spinner"></div>;
+  if (error) return <p className="error">{error}</p>;
   if (!book) return <p className="error">Book details not found.</p>;
 
   return (
