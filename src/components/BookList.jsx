@@ -1,5 +1,6 @@
 // src/components/BookList.jsx
 import BookCard from "./BookCard";
+import "../styles/BookList.css"; // ✅ Import styling file
 
 const BookList = ({ books }) => {
   if (!books.length) {
@@ -17,4 +18,18 @@ const BookList = ({ books }) => {
 
 export default BookList;
 
+// // src/components/BookList.jsx
+// import BookCard from "./BookCard";
 
+
+// const BookList = ({ books }) => {
+//   return (
+//     <div className="book-list">
+//       {books.map((book) => (
+//         <BookCard key={book.key} book={book} />
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default BookList;
