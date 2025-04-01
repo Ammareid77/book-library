@@ -11,7 +11,7 @@ const Home = () => {
   // Function to fetch books from the Open Library API
   const searchBooks = async (query) => {
     if (!query.trim()) {
-      setError("Find your book now"); // Display message if query is empty
+      setError("Find your book "); // Display message if query is empty
       setBooks([]); // Clear book list
       return;
     }

@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+// import "../styles/BookCard.css";
+
 
 const BookCard = ({ book }) => {
   return (
-    <div className="border p-4 rounded-lg shadow-md">
+    <div className="book-card">
       <h3 className="text-lg font-semibold">{book.title}</h3>
       <p className="text-gray-600">by {book.author_name?.join(", ") || "Unknown"}</p>
-      <Link to={`/book/${book.key.replace("/works/", "")}`} className="text-blue-500 mt-2 block">
+      <Link to={`/book/${book.key.replace("/works/", "")}`} className="view" >
         View Details
       </Link>
     </div>

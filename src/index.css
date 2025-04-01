@@ -3,8 +3,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    /* background-color: #f9f9f9; */
     background-image: url(Designer.png);
+    background-size: cover;
     background-repeat: no-repeat;
     color: #ffffff;
 }
@@ -53,7 +53,7 @@ body {
 }
 
 .search-input:focus {
-    border-color: #007bff;
+    border-color: #02468f;;
     outline: none;
 }
 
@@ -84,9 +84,21 @@ body {
     gap: 20px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 /* ======= Book Card ======= */
 .book-card {
-    background: white;
+    /* position: relative; */
+    background: rgb(255, 255, 255);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
@@ -108,16 +120,29 @@ body {
 }
 
 .book-card a {
+    /* position: absolute;
     display: inline-block;
+    bottom: 10px;
+    left: 10px; */
     margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
     text-decoration: none;
-    color: #007bff;
+    color: white;
     font-weight: bold;
+    background-color: #0000007c;
+    font-size: 14px;
+    transition: background 0.3s;
+
+
 }
 
 .book-card a:hover {
-    text-decoration: underline;
+    background-color: #000000;
 }
+
+
+
 
 /* ======= Book Details Page ======= */
 .book-details {
@@ -177,4 +202,6 @@ body {
         align-items: center;
     }
 }
+
+
 
