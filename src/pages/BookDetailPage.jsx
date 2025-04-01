@@ -1,11 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Navigation feature
+import backArrow from "../assets/home.png"; // Import Go back image
+import "../styles/BookDetailPage.css";
 
 const BookDetailPage = () => {
   const { id } = useParams(); // Get book ID from URL
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // Initialize navigation
 
   useEffect(() => {
     // Fetch book details from Open Library API
@@ -31,17 +35,27 @@ const BookDetailPage = () => {
   if (!book) return <p>Book details not found.</p>;
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="book-detail-container">
+      {/* Back Button with Image */}
+      <img
+        src={backArrow}
+        alt="Go Back"
+        className="go-back-icon"
+        onClick={() => navigate(-1)}
+      />
+    <div className="book-details">
       <h1 className="text-3xl font-bold">{book.title}</h1>
       {book.description && (
-        <p className="mt-2 text-gray-700">
+        <p className="description">
           {typeof book.description === "string" ? book.description : book.description.value}
         </p>
       )}
-      <p className="mt-4 text-gray-600">Published: {book.first_publish_date || "Unknown"}</p>
+      <p className="first_publish_date">Published: {book.first_publish_date || "Unknown"}</p>
+    </div>
     </div>
   );
 };
 
 export default BookDetailPage;
+
 
