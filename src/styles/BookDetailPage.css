@@ -1,0 +1,38 @@
+/* ======= Book Details Page ======= */
+.book-details {
+    border: rgb(7, 7, 107) solid 5px;
+    width: 1000px;
+    margin: auto;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.book-details .description {
+    color:#000000;
+    font-size: 22px;
+}
+.book-details h1 {
+    color: black;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.book-details .first_publish_date {
+    color: #000000c4;
+    font-weight: bold;
+}
+
+/* ======= Go back button ======= */
+.book-detail-container img {
+    width: 65px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-left: -55px;
+    
+}
+
+.book-detail-container img:hover {
+    transform: scale(1.2);
+}
