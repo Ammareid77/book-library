@@ -1,10 +1,9 @@
-
 // src/components/BookList.jsx
 import BookCard from "./BookCard";
 
 const BookList = ({ books }) => {
   if (!books.length) {
-    return <p className="text-center">Find your book now.</p>;
+    return null; // Removed the message
   }
 
   return (
@@ -17,4 +16,5 @@ const BookList = ({ books }) => {
 };
 
 export default BookList;
+
 
