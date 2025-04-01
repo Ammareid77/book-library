@@ -1,62 +1,11 @@
-/* src/styles/BookList.css */
 .book-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
     justify-content: center;
 }
 
-/* Book Card Styles */
-.book-card {
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.book-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Book Title */
-.book-card h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 8px;
-}
-
-/* Book Details */
-.book-card p {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 8px;
-}
-
-
-
-
-/* View Details Button */
-/* .view {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #0000007c;
-    color: rgb(255, 0, 0);
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background 0.3s;
-    text-decoration: none;
-}
-
-.book-card a:hover {
-    background-color: #000000;
-} */
 
 
 
