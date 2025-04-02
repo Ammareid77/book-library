@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useState, useEffect } from 'react';
 import { ThemeContext } from "../context/ThemeContext";
 import sunIcon from "../assets/light_mode.png"; // import Light mode icon
 import moonIcon from "../assets/dark_mode.png"; // import Dark mode icon
@@ -27,3 +27,6 @@ const DarkModeToggle = () => {
   };
   
   export default DarkModeToggle;
+
+
+  

@@ -4,8 +4,7 @@ import DarkModeToggle from "./DarkModeToggle"; // ✅ Import Toggle Button
 const Navbar = () => {
     return (
       <nav className="navbar">
-        <h1>Book Library</h1>
-        <DarkModeToggle /> {/* ✅ Add this button inside Navbar */}
+        <DarkModeToggle/> {/* ✅ Add this button inside Navbar */}
       </nav>
     );
   };
