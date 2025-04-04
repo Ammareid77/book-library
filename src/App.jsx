@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/book/:id" element={<BookDetailPage />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );
