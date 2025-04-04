@@ -26,7 +26,6 @@ body {
 
 
 /* ======= Search Bar ======= */
-
 .search-bar {
     display: flex;
     justify-content: center;
@@ -70,7 +69,6 @@ body {
     -moz-transition: background 0.3s ease;
     -ms-transition: background 0.3s ease;
     -o-transition: background 0.3s ease;
-    
 }
 
 .search-button:hover {
@@ -118,17 +116,7 @@ body {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-/* Dark Mode Styles */
+/* ======= Dark Mode Styles ======= */
 .dark-mode body {
     background-image:url(../src/assets/Dark_mode_image.png);
     background-size: cover;
@@ -162,7 +150,7 @@ body {
     color: #ffffff;
 }
 
-/* ======= View details button ======= */
+/* ======= View details button in the dark mode ======= */
 .dark-mode .book-card a {
     color: rgb(0, 0, 0);
     font-weight: bold;
@@ -175,10 +163,7 @@ body {
     background-color: #ffffff;
 }
 
-
-
-
-/* ======= Book Details Page ======= */
+/* ======= Book Details Page in the dark mode ======= */
 .dark-mode .book-details {
     border: rgb(7, 7, 107) solid 5px;
     width: 1000px;
@@ -202,4 +187,3 @@ body {
     color: #ffffffc4;
     font-weight: bold;
 }
-

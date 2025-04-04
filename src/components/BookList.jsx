@@ -1,6 +1,5 @@
 import BookCard from "./BookCard";
 import "../styles/BookList.css"; // ✅ Import styling file
-// import "../components/DarkModeToggle";
 
 const BookList = ({ books }) => {
   return (
@@ -13,6 +12,3 @@ const BookList = ({ books }) => {
 };
 
 export default BookList;
-
-
-
