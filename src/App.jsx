@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom"; // Remove BrowserRouter from h
 import Home from "./pages/Home";
 import BookDetailPage from "./pages/BookDetailPage";
 import Navbar from "../src/components/Navbar"; // ✅ Import Navbar
+import Footer from "./components/Footer"; // Import the Footer component
+
 
 function App() {
   return (
