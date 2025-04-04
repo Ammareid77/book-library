@@ -44,7 +44,7 @@ const BookDetailPage = () => {
         onClick={() => navigate(-1)}
       />
     <div className="book-details">
-      <h1 className="text-3xl font-bold">{book.title}</h1>
+      <h1 >{book.title}</h1>
       {book.description && (
         <p className="description">
           {typeof book.description === "string" ? book.description : book.description.value}
@@ -57,5 +57,3 @@ const BookDetailPage = () => {
 };
 
 export default BookDetailPage;
-
-
