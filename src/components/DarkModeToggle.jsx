@@ -18,6 +18,7 @@ const DarkModeToggle = () => {
         localStorage.setItem("theme", "light");
       }
     }, [darkMode]);
+    
   
     return (
       <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
@@ -27,6 +28,7 @@ const DarkModeToggle = () => {
   };
   
   export default DarkModeToggle;
+
 
 
   
