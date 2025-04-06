@@ -11,22 +11,24 @@
     min-height: 100vh; /* Fill the full screen height */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     box-sizing: border-box;
 }
 
 .book-details .description {
     color:#000000;
     font-size: 22px;
+    /* text-align: center; */
 }
 
 .book-details h1 {
-    color: black;
+    color: #1c4f79;
     font-size: 3rem;
     margin-bottom: 10px;
+    text-align: center;
 }
 
-.book-details .first_publish_date {
+.book-details p {
     color: #000000c4;
     font-weight: bold;
 }
