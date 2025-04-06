@@ -12,8 +12,8 @@ const BookCard = ({ book }) => {
   return (
     <div className="book-card">
       <img src={coverUrl} alt={book.title} className="book-cover" />
-      <h3 className="text-lg font-semibold">{book.title}</h3>
-      <p className="text-gray-600">{book.author_name?.join(" & ") || "Unknown author"}</p>
+      <h3>{book.title}</h3>
+      <p>{book.author_name?.join(" & ") || "Unknown author"}</p>
       <Link to={`/book/${book.key.replace("/works/", "")}`} className="view">
         View Details
       </Link>

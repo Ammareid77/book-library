@@ -36,7 +36,7 @@ const BookDetailPage = () => {
 
   return (
     <div className="book-detail-container">
-      {/* Back Button with Image */}
+      {/* Go home Button with Image */}
       <img
         src={backArrow}
         alt="Go Back"
