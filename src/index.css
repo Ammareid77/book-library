@@ -131,7 +131,7 @@ body {
     max-width: 100%;
     min-height: 100vh;
     font-size: 14px;
-    text-align:center;
+    /* text-align:center; */
 }
 }
 
@@ -196,7 +196,6 @@ body {
     min-height: 100vh; /* Fill the full screen height */
     display: flex;
     flex-direction: column;
-    align-items: center;
     box-sizing: border-box;
 }
 
@@ -205,12 +204,13 @@ body {
     font-size: 22px;
 }
 .dark-mode .book-details h1 {
-    color: rgb(255, 255, 255);
+    color: #37a3fc;
     font-size: 3rem;
     margin-bottom: 10px;
+    text-align: center;
 }
 
-.dark-mode .book-details .first_publish_date {
+.dark-mode .book-details p {
     color: #ffffffc4;
     font-weight: bold;
 }
